@@ -108,8 +108,15 @@ namespace RemittanceParser
                                 }
                                 break;
                             case "SE":
-                                output[i] += line.ToString();
-                                se_segment = line.ToString();
+                                if (is835 == true)
+                                {
+                                    se_segment = line.ToString();
+                                    for (int ii = 0; ii <= i; ii++)
+                                    {
+                                        if (output.GetValue(ii).ToString().Contains("ST*835") == false)
+                                            output[ii] = st_segment + output.GetValue(ii).ToString() + se_segment;
+                                    }
+                                }
                                 is835 = true;
                                 break;
                             case "ST":
@@ -120,14 +127,14 @@ namespace RemittanceParser
                                 else
                                 {
                                     transaction_set = segment.GetValue(3).ToString();
-                                    output[i] += line.ToString();
                                     st_segment = line.ToString();
                                 }
                                 break;
                             default:
                                 if (is835 == true)
                                 {
-                                    output[i] += line.ToString();
+                                    if (line.ToString().Length > 0)
+                                        output[i] += line.ToString();
                                 }
                                 break;
                         }
