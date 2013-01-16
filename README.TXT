@@ -10,3 +10,4 @@ File name format is: originalname_billingprovider_counter.originalextension
 TODO:
 - cleanup code by fixing predetermined array size of 1000
 - verify SE segment counts
+- fix ST placement
