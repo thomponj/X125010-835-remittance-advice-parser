@@ -23,10 +23,10 @@
             // 
             // btn_browse
             // 
-            this.btn_browse.Location = new System.Drawing.Point(433, 12);
+            this.btn_browse.Location = new System.Drawing.Point(12, 12);
             this.btn_browse.Name = "btn_browse";
-            this.btn_browse.Size = new System.Drawing.Size(100, 35);
-            this.btn_browse.TabIndex = 5;
+            this.btn_browse.Size = new System.Drawing.Size(521, 158);
+            this.btn_browse.TabIndex = 1;
             this.btn_browse.Text = "Browse to file...";
             this.btn_browse.UseVisualStyleBackColor = true;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
